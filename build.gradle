@@ -7,10 +7,30 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
+ext {
+    discord4j_version = "dev-SNAPSHOT"
+    guice_version = "4.0"
+    gson_version = "2.8.4"
+    lombok_version = "1.16.20"
+    logback_version = "1.2.3"
+    reflections_version = "0.9.11"
+    argparse_version = "0.8.1"
+}
+
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
+    implementation "com.github.Discord4J:Discord4J:$discord4j_version"
+    implementation "com.google.inject:guice:$guice_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "org.projectlombok:lombok:$lombok_version"
+    implementation "ch.qos.logback:logback-core:$logback_version"
+    implementation "ch.qos.logback:logback-classic:$logback_version"
+    implementation "org.reflections:reflections:$reflections_version"
+    implementation "net.sourceforge.argparse4j:argparse4j:$argparse_version"
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
